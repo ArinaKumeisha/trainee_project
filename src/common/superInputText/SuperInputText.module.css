@@ -1,0 +1,21 @@
+.input {
+  background-color: #cdc8c8;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  font-size: 21px;
+}
+.input:focus {
+  outline: none;
+  border-bottom: 2px solid black;
+}
+
+.superInput {
+  margin-right: 10px;
+}
+
+.errorInput {
+  border: 2px solid red;
+}
+
+.error {
+}

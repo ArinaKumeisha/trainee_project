@@ -1,0 +1,17 @@
+.cartItem {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-decoration: none;
+  cursor: pointer;
+  width: 350px;
+  min-height: 450px;
+  background-color: #3f3f5a;
+  border-radius: 15px;
+  margin: 15px;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  flex-direction: column;
+  padding: 20px;
+}

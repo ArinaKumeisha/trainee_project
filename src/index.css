@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #eae6e6;
+}
+
+
+
+body {
+    margin: 0;
+    background-color: #4f5170;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+hr {
+    border: 1px solid rosybrown;
+    margin-top: 5px;
+}

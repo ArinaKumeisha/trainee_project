@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+    background-color: #4b5757;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.50);
+    font-size: 30px;
+    color: #ebe7e7;
+}
+.container:hover {
+    color: #ab8989;
+}
