@@ -1,35 +1,27 @@
-import React from "react";
-import style from "./Items.module.css";
-import {itemsAPI} from "../../redux/gamesAPI";
-import Item, {ItemsType} from "./item/Item";
+import React from 'react';
+import s from 'common/commonStyle/Common.module.css';
+import { countItems, DebounceSearch } from 'logic';
+import { useSearchParams } from 'react-router-dom';
+import { useGetItemsQuery } from 'BLL/redux';
+import { Item } from 'components/items';
+import { enteredSearch } from 'logic';
 
-export type DataType = {
-  success: true;
-  count: number;
-  total: number;
-  data: ItemsType[];
-};
+export const Items = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const postQuery = searchParams.get('name') || '';
+  const { data: items } = useGetItemsQuery(postQuery);
+  const searchValues = items && enteredSearch(items.data, postQuery);
 
-const Items = () => {
-  const {data: items} = itemsAPI.useGetItemsQuery(5);
   return (
-    <div className={style.container}>
-      {items &&
-        items.data.map((element) => {
-          return (
-            <Item
-              key={element.id}
-              name={element.name}
-              image={element.image}
-              type={element.type}
-              description={element.description}
-              effect={element.effect}
-              id={element.id}
-            />
-          );
-        })}
+    <div>
+      <DebounceSearch setSearchParams={setSearchParams} />
+      <h1>{items && countItems(items)}</h1>
+      <div className={s.mainContainer}>
+        {searchValues &&
+          searchValues.map(element => {
+            return <Item key={element.id} shortCart={element} />;
+          })}
+      </div>
     </div>
   );
 };
-
-export default Items;

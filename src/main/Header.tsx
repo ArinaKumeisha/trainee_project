@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "./Header.module.css";
 
-const Header = () => {
+export const Header = () => {
   return (
     <div className={style.container}>
       <NavLink to="/">Back</NavLink>
@@ -13,5 +13,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;

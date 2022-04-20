@@ -1,11 +1,20 @@
-import React from "react";
-import "./App.css";
-import Main from "./main/Main";
+import React, { useState } from 'react';
+import Main from './main/Main';
+import { ItemsContext } from 'logic';
+import './App.css';
 
 const App = () => {
+  const [name, setName] = useState('');
   return (
     <div className="App">
-      <Main/>
+      <ItemsContext.Provider
+        value={{
+          name,
+          setName,
+        }}
+      >
+        <Main />
+      </ItemsContext.Provider>
     </div>
   );
 };

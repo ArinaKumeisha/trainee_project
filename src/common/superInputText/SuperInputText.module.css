@@ -1,8 +1,12 @@
 .input {
-  background-color: #cdc8c8;
+  background-color: white;
   border: none;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
-  font-size: 21px;
+  border-bottom: 2px solid rgb(38, 62, 94);
+  font-size: 20px;
+  padding: 3px;
+  width: 400px;
+  height: 50px;
+  color: #092dab;
 }
 .input:focus {
   outline: none;

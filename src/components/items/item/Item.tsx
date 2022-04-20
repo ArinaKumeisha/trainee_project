@@ -1,23 +1,22 @@
-import React from "react";
-import style from "./Item.module.css";
-export type ItemsType = {
-  id: string;
-  name: string;
-  image: string;
-  description: string;
-  type?: string;
-  effect?: string;
-};
+import React from 'react';
 
-const Item = ({ name, image, description, type, effect }: ItemsType) => {
+import { ItemBriefly } from 'components/itemBriefly';
+import { useNavigate } from 'react-router-dom';
+import { DataItem } from 'types/types';
+
+type Props = {
+  shortCart: DataItem;
+};
+export const Item = ({ shortCart }: Props) => {
+  const navigate = useNavigate();
+
+  const getItem = () => {
+    return navigate(`/items/${shortCart.id}`);
+  };
+
   return (
-    <div className={style.cartItem}>
-      <h4>{name}</h4>
-      <img src={image} />
-      <p>{description}</p>
-      <p>{type}</p>
+    <div onClick={getItem}>
+      <ItemBriefly shortCart={shortCart} />
     </div>
   );
 };
-
-export default Item;

@@ -1,32 +1,38 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    color: #eae6e6;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #eae6e6;
 }
 
-
+h1,
+h2,
+h3,
+h4 {
+  color: #c3c3d2;
+  text-shadow: 1px 1px #e71313;
+}
 
 body {
-    margin: 0;
-    background-color: #4f5170;
+  margin: 0;
+  background-color: #353547;
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 h1 {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 h2 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 hr {
-    border: 1px solid rosybrown;
-    margin-top: 5px;
+  border: 1px solid rosybrown;
+  margin-top: 5px;
 }

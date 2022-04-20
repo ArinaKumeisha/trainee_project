@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 20px;
+  min-height: 100vh;
+  background-size: cover;
+  background-image: url("../../images/cover2.jpg");
+  position: relative;
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 30px;
+  left: 100px;
+}
+.error {
+  color: #880909;
+  font-size: 20px;
+}
+.title {
+  font-size: 50px;
+  color: #d1e7ed;
+  padding-right: 20px;
+}
+.description {
+  font-size: 30px;
+  margin: 60px;
+  color: #a9c5ea;
+  border-right: #3b83e0 5px solid;
+  border-bottom: #3b83e0 7px solid;
+  box-shadow: #958d8d 3px 3px;
+  text-shadow: #8c0606 2px 2px;
+  position: absolute;
+  bottom: 0;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 150px;
+  padding-top: 150px;
+}
+
+.footer {
+  left: 0;
+  height: 300px;
+  width: 100%;
+}
