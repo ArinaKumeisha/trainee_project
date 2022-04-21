@@ -1,11 +1,11 @@
 import React, { ChangeEvent } from 'react';
 import { SuperInputText } from 'common';
 
-type PropsType = {
+type Props = {
   setSearchParams: (value: { name: string } | {}) => void;
 };
 
-export const DebounceSearch = ({ setSearchParams }: PropsType) => {
+export const SearchName = ({ setSearchParams }: Props) => {
   const search = (event: ChangeEvent<HTMLInputElement>) => {
     const debounce = setTimeout(() => {
       const name = event.target.value.toLowerCase();

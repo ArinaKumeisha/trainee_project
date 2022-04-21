@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { countItems, DebounceSearch, enteredSearch } from 'logic';
-import { useGetArmorsQuery } from 'BLL/redux';
+import { countItems, enteredSearch } from 'utilities';
 import { Armor } from 'components/armors';
+import { useGetArmorsQuery } from 'reduxLayer';
+import { SearchName } from 'components/searchName';
 import s from 'common/commonStyle/Common.module.css';
 
 export const Armors = () => {
@@ -13,7 +14,7 @@ export const Armors = () => {
 
   return (
     <div>
-      <DebounceSearch setSearchParams={setSearchParams} />
+      <SearchName setSearchParams={setSearchParams} />
       <h1>{items && countItems(items)}</h1>
       <div className={s.mainContainer}>
         {searchValues &&

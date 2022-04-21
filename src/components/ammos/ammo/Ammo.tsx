@@ -1,20 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ItemBriefly } from 'components/itemBriefly';
-import { DataItem } from 'types/types';
+import type { ShortInfoForItem } from 'types';
 
 type Props = {
-  shortCart: DataItem;
+  shortCart: ShortInfoForItem;
 };
 export const Ammo = ({ shortCart }: Props) => {
   const navigate = useNavigate();
 
-  const getItem = () => {
+  const redirectionToCart = () => {
     return navigate(`/ammos/${shortCart.id}`);
   };
 
   return (
-    <div onClick={getItem}>
+    <div onClick={redirectionToCart}>
       <ItemBriefly shortCart={shortCart} />
     </div>
   );

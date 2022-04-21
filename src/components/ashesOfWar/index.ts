@@ -1,1 +1,0 @@
-export { AshesOfWar } from './AshesOfWar';

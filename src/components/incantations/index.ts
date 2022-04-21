@@ -1,1 +1,0 @@
-export { Incantations } from "./Incantations";

@@ -1,9 +1,9 @@
 import React from 'react';
-import { DataItem } from 'types/types';
+import type { ShortInfoForItem } from 'types';
 import s from 'common/commonStyle/Common.module.css';
 
 type Props = {
-  shortCart: DataItem;
+  shortCart: ShortInfoForItem;
 };
 
 export const ItemBriefly = ({ shortCart }: Props) => {

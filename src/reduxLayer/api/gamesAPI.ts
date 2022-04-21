@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react';
-import { ResponseItem, ResponseItems } from 'types/types';
+import type { ResponseItem, ResponseItems } from 'types';
 
 export const itemsAPI = createApi({
   reducerPath: 'itemsAPI',

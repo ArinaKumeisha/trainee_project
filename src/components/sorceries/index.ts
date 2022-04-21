@@ -1,1 +1,0 @@
-export { Sorceries } from './Sorceries';

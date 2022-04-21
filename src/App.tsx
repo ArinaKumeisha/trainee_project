@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Main from './main/Main';
-import { ItemsContext } from 'logic';
+import { ItemsContext } from 'utilities';
 import './App.css';
 
 const App = () => {

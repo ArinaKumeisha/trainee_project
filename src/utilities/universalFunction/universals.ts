@@ -1,5 +1,5 @@
-import { Items, ResponseItems } from 'types/types';
-import { TitleSearch } from 'logic';
+import type { Items, ResponseItems } from 'types';
+import type { TitleSearch } from 'utilities';
 
 export const countItems = (items: ResponseItems) => {
   if (items && items.count) {

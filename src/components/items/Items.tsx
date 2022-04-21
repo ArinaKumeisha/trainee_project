@@ -1,10 +1,10 @@
 import React from 'react';
-import s from 'common/commonStyle/Common.module.css';
-import { countItems, DebounceSearch } from 'logic';
 import { useSearchParams } from 'react-router-dom';
-import { useGetItemsQuery } from 'BLL/redux';
+import { countItems, enteredSearch } from 'utilities';
 import { Item } from 'components/items';
-import { enteredSearch } from 'logic';
+import { useGetItemsQuery } from 'reduxLayer';
+import { SearchName } from 'components/searchName';
+import s from 'common/commonStyle/Common.module.css';
 
 export const Items = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -14,7 +14,7 @@ export const Items = () => {
 
   return (
     <div>
-      <DebounceSearch setSearchParams={setSearchParams} />
+      <SearchName setSearchParams={setSearchParams} />
       <h1>{items && countItems(items)}</h1>
       <div className={s.mainContainer}>
         {searchValues &&

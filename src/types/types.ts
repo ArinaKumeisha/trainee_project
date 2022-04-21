@@ -10,7 +10,7 @@ export type ResponseItem = {
   success: boolean;
 };
 
-export type DataItem = {
+export type ShortInfoForItem = {
   id: string;
   name: string;
   image: string;

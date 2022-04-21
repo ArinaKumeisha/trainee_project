@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { countItems, DebounceSearch, enteredSearch } from 'logic';
-import { useGetAmmosQuery } from 'BLL/redux';
+import { countItems, enteredSearch } from 'utilities';
 import { Ammo } from 'components/ammos';
+import { useGetAmmosQuery } from 'reduxLayer';
+import { SearchName } from 'components/searchName';
 import s from 'common/commonStyle/Common.module.css';
 
 export const Ammos = () => {
@@ -13,7 +14,7 @@ export const Ammos = () => {
 
   return (
     <div>
-      <DebounceSearch setSearchParams={setSearchParams} />
+      <SearchName setSearchParams={setSearchParams} />
       <h1>{items && countItems(items)}</h1>
       <div className={s.mainContainer}>
         {searchValues &&

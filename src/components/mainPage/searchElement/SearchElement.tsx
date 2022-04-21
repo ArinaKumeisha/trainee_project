@@ -23,9 +23,9 @@ export const SearchElement = ({
       {element.title}
     </li>
   ));
+  const validElement = filteredTitles.find(elem => elem.title === searchTitle);
 
   const enterPressed = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    const validElement = filteredTitles.find(elem => elem.title === searchTitle);
     if (event.code === 'Enter' && validElement) {
       getItem(validElement.title);
     }

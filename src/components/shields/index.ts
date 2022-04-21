@@ -1,1 +1,0 @@
-export { Shields } from './Shields';

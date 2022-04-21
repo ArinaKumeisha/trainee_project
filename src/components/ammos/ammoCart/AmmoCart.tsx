@@ -1,6 +1,6 @@
 import React from 'react';
-import { useGetOneAmmoQuery } from 'BLL/redux';
-import { useCustomParams } from 'logic';
+import { useCustomParams } from 'utilities';
+import { useGetOneAmmoQuery } from 'reduxLayer';
 import s from 'common/commonStyle/Common.module.css';
 
 export const AmmoCart = () => {
@@ -20,7 +20,7 @@ export const AmmoCart = () => {
     });
 
   return (
-    <div className={s.blockCart}>
+    <>
       {data ? (
         <div className={s.detailedItem}>
           <img src={data.data.image} alt={'ammo'} className={s.imageItem} />
@@ -30,9 +30,7 @@ export const AmmoCart = () => {
             {attackPowers}
           </div>
         </div>
-      ) : (
-        []
-      )}
-    </div>
+      ) : null}
+    </>
   );
 };

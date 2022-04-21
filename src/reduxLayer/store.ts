@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { itemsAPI } from './api/gamesAPI';
+import { itemsAPI } from 'reduxLayer';
 
 const rootReducer = combineReducers({
   [itemsAPI.reducerPath]: itemsAPI.reducer,

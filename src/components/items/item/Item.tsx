@@ -1,21 +1,20 @@
 import React from 'react';
-
-import { ItemBriefly } from 'components/itemBriefly';
 import { useNavigate } from 'react-router-dom';
-import { DataItem } from 'types/types';
+import { ItemBriefly } from 'components/itemBriefly';
+import type { ShortInfoForItem } from 'types';
 
 type Props = {
-  shortCart: DataItem;
+  shortCart: ShortInfoForItem;
 };
 export const Item = ({ shortCart }: Props) => {
   const navigate = useNavigate();
 
-  const getItem = () => {
+  const redirectionToCart = () => {
     return navigate(`/items/${shortCart.id}`);
   };
 
   return (
-    <div onClick={getItem}>
+    <div onClick={redirectionToCart} role="button" tabIndex={0}>
       <ItemBriefly shortCart={shortCart} />
     </div>
   );

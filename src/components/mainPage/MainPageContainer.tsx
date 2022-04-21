@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MainPage } from 'components/mainPage';
-import { titlesForSearch, filteredMainTitles } from 'logic';
+import { titlesForSearch, filteredMainTitles } from 'utilities';
 
 export const MainPageContainer = () => {
   const navigate = useNavigate();

@@ -1,14 +1,14 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useGetOneItemQuery } from 'reduxLayer';
 import s from 'common/commonStyle/Common.module.css';
-import { useGetOneItemQuery } from 'BLL/redux';
 
 export const CartItem = () => {
   const { itemId } = useParams<{ itemId: string }>();
   const correctId = itemId ? itemId : '';
   const { data: item } = useGetOneItemQuery(correctId);
   return (
-    <div className={s.blockCart}>
+    <>
       {item ? (
         <div className={s.detailedItem}>
           <img src={item.data.image} alt={'item'} className={s.imageItem} />
@@ -22,9 +22,7 @@ export const CartItem = () => {
             <div>effect:{item.data.effect}</div>
           </div>
         </div>
-      ) : (
-        []
-      )}
-    </div>
+      ) : null}
+    </>
   );
 };

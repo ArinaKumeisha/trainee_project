@@ -1,1 +1,0 @@
-export { Spirits } from './Spirits';

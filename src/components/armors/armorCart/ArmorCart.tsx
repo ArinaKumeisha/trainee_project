@@ -1,6 +1,6 @@
 import React from 'react';
-import { useGetOneArmorQuery } from 'BLL/redux';
-import { useCustomParams } from 'logic';
+import { useCustomParams } from 'utilities';
+import { useGetOneArmorQuery } from 'reduxLayer';
 import s from 'common/commonStyle/Common.module.css';
 
 export const ArmorCart = () => {
@@ -18,7 +18,7 @@ export const ArmorCart = () => {
   });
 
   return (
-    <div className={s.blockCart}>
+    <>
       {data ? (
         <div className={s.detailedItem}>
           <img src={data.data.image} alt={'armo'} className={s.imageItem} />
@@ -31,9 +31,7 @@ export const ArmorCart = () => {
             {negationItems}
           </div>
         </div>
-      ) : (
-        []
-      )}
-    </div>
+      ) : null}
+    </>
   );
 };

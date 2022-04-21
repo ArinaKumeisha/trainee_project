@@ -1,1 +1,0 @@
-export { Talismans } from './Talismans';

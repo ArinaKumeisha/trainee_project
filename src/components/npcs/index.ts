@@ -1,1 +1,0 @@
-export { NPCs } from './NPCs';
