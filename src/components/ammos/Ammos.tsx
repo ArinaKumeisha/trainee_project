@@ -2,7 +2,7 @@ import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { countItems, enteredSearch } from 'utilities';
 import { Ammo } from 'components/ammos';
-import { useGetAmmosQuery } from 'reduxLayer';
+import { useGetAmmosQuery } from 'reduxEntities';
 import { SearchName } from 'components/searchName';
 import s from 'common/commonStyle/Common.module.css';
 

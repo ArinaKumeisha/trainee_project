@@ -1,0 +1,12 @@
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.error {
+  color: #b884bc;
+  text-shadow: whitesmoke 1px 1px;
+  font-size: 40px;
+}

@@ -1,4 +1,4 @@
-import { itemsAPI } from 'reduxLayer/api/gamesAPI';
+import { itemsAPI } from 'reduxEntities/api/gamesAPI';
 import type { ResponseItem, ResponseItems } from 'types';
 
 export const extendedApiSlice = itemsAPI.injectEndpoints({

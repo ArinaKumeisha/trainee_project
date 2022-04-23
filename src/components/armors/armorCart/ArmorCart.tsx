@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCustomParams } from 'utilities';
-import { useGetOneArmorQuery } from 'reduxLayer';
+import { useGetOneArmorQuery } from 'reduxEntities';
 import s from 'common/commonStyle/Common.module.css';
 
 export const ArmorCart = () => {

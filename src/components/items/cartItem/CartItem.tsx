@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useGetOneItemQuery } from 'reduxLayer';
+import { useGetOneItemQuery } from 'reduxEntities';
 import s from 'common/commonStyle/Common.module.css';
 
 export const CartItem = () => {

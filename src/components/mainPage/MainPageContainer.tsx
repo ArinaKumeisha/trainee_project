@@ -16,13 +16,11 @@ export const MainPageContainer = () => {
   };
 
   return (
-    <div>
-      <MainPage
-        searchTitle={searchTitle}
-        onSearchHandler={onSearchHandler}
-        onclickHandler={onclickHandler}
-        filteredTitles={filteredMainTitles(titlesForSearch, searchTitle)}
-      />
-    </div>
+    <MainPage
+      searchTitle={searchTitle}
+      onSearchHandler={onSearchHandler}
+      onclickHandler={onclickHandler}
+      filteredTitles={filteredMainTitles(titlesForSearch, searchTitle)}
+    />
   );
 };

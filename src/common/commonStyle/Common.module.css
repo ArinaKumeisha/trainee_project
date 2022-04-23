@@ -64,3 +64,27 @@
   flex-wrap: wrap;
   padding: 40px 0 40px 0;
 }
+
+.inputAuth {
+  padding: 5px;
+  border-radius: 3px;
+  color: black;
+}
+
+.btnSubmit {
+  background: #243d97;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+.btnSubmit:hover {
+  background: #0c1639;
+  width: 90px;
+}
+
+.error {
+  margin-top: 40px;
+  color: red;
+  text-shadow: whitesmoke 0.5px 0.5px;
+  font-size: 30px;
+}

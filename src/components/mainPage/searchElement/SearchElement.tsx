@@ -32,7 +32,7 @@ export const SearchElement = ({
   };
 
   return (
-    <div className={style.form}>
+    <>
       <form className={style.searchForm}>
         <input
           placeholder="search element"
@@ -42,6 +42,6 @@ export const SearchElement = ({
         />
         <ul className={style.autoComplete}>{searchTitle ? searchTitles : null}</ul>
       </form>
-    </div>
+    </>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useCustomParams } from 'utilities';
-import { useGetOneAmmoQuery } from 'reduxLayer';
+import { useGetOneAmmoQuery } from 'reduxEntities';
 import s from 'common/commonStyle/Common.module.css';
 
 export const AmmoCart = () => {
