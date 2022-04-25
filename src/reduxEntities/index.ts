@@ -13,10 +13,10 @@ export {
 export { setupStore } from 'reduxEntities/store';
 export type { RootState, AppStore, AppDispatch } from 'reduxEntities/store';
 export {
-  setRegistrationData,
+  setLoginData,
   recognizeError,
-  setInitialization,
-} from 'reduxEntities/registration/registrationSlice';
+  logout,
+} from 'reduxEntities/registration/registration';
 export {
   useAppMainSelector,
   useAppDispatch,

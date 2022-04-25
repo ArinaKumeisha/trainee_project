@@ -19,7 +19,6 @@ export const Registration = ({
   completeRegistration,
 }: Props) => {
   const dispatch = useAppDispatch();
-  const error = useAppMainSelector(state => state.registrationReducer.error);
 
   const createName = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.currentTarget.value);
@@ -29,7 +28,7 @@ export const Registration = ({
   const createPassword = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.currentTarget.value);
   };
-
+  const error = useAppMainSelector(state => state.registration.error);
   return (
     <div className={style.block}>
       <form onSubmit={completeRegistration}>

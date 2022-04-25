@@ -1,20 +1,27 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import style from './Header.module.css';
-import { useAppMainSelector } from 'reduxEntities';
+import { logout, useAppDispatch, useAppMainSelector } from 'reduxEntities';
+import { SuperButton } from 'common';
 
 export const Header = () => {
-  const initialized = useAppMainSelector(state => state.registrationReducer.initialized);
-  const users = useAppMainSelector(state => state.registrationReducer.users);
-  const user = users[users.length - 1];
+  const authorized = useAppMainSelector(state => state.registration.authorized);
+  const user = useAppMainSelector(state => state.registration.user);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
+  const logoutHandler = () => {
+    dispatch(logout());
+    navigate('/');
+  };
   return (
     <div className={style.container}>
-      {initialized ? (
+      {authorized ? (
         <div className={style.navLinks}>
-          {user.name}
+          <h1>{user.name}</h1>
+          <NavLink to="/favorites">Favorites</NavLink>
           <NavLink to="/history">History</NavLink>
-          <NavLink to="/logout">Logout</NavLink>
+          <SuperButton onClick={logoutHandler}>Logout</SuperButton>
         </div>
       ) : (
         <div className={style.navLinks}>

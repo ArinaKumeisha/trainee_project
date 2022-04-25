@@ -19,7 +19,7 @@ export const ArmorCart = () => {
 
   return (
     <>
-      {data ? (
+      {data && (
         <div className={s.detailedItem}>
           <img src={data.data.image} alt={'armo'} className={s.imageItem} />
           <div className={s.description}>
@@ -31,7 +31,7 @@ export const ArmorCart = () => {
             {negationItems}
           </div>
         </div>
-      ) : null}
+      )}
     </>
   );
 };

@@ -9,7 +9,7 @@ export const CartItem = () => {
   const { data: item } = useGetOneItemQuery(correctId);
   return (
     <>
-      {item ? (
+      {item && (
         <div className={s.detailedItem}>
           <img src={item.data.image} alt={'item'} className={s.imageItem} />
 
@@ -22,7 +22,7 @@ export const CartItem = () => {
             <div>effect:{item.data.effect}</div>
           </div>
         </div>
-      ) : null}
+      )}
     </>
   );
 };

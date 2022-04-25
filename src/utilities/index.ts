@@ -10,3 +10,4 @@ export {
 export { useCustomParams } from 'utilities/customHooks/customHooks';
 export { titlesForSearch } from 'utilities/universalFunction/titlesForSearch';
 export type { TitleSearch } from 'utilities/universalFunction/titlesForSearch';
+export { getStorageName, setUserData } from './universalFunction/storage';

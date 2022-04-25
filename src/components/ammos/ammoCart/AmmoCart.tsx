@@ -21,7 +21,7 @@ export const AmmoCart = () => {
 
   return (
     <>
-      {data ? (
+      {data && (
         <div className={s.detailedItem}>
           <img src={data.data.image} alt={'ammo'} className={s.imageItem} />
           <div className={s.description}>
@@ -30,7 +30,7 @@ export const AmmoCart = () => {
             {attackPowers}
           </div>
         </div>
-      ) : null}
+      )}
     </>
   );
 };

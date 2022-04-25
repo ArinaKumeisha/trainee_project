@@ -2,11 +2,11 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { itemsAPI } from 'reduxEntities';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { registrationSlice } from 'reduxEntities/registration/registrationSlice';
+import { registration } from 'reduxEntities/registration/registration';
 
 const rootReducer = combineReducers({
   [itemsAPI.reducerPath]: itemsAPI.reducer,
-  registrationReducer: registrationSlice.reducer,
+  registration: registration.reducer,
 });
 const persistConfig = {
   key: 'reduxState',

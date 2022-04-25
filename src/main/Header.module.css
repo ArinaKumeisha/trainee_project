@@ -1,6 +1,7 @@
 .container {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   background-color: #90abab;
   position: fixed;
   width: 100%;
@@ -9,12 +10,28 @@
 
 .navLinks {
   padding: 20px;
-  font-size: 30px;
   color: #ebe7e7;
-  width: 360px;
+  width: 600px;
   display: flex;
   justify-content: space-between;
 }
+
+a {
+  cursor: pointer;
+  background-color: gray;
+  width: 125px;
+  height: 41px;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
+  transition: all 0.5s ease;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  color: whitesmoke;
+  padding: 12px;
+  margin: 10px;
+}
+
 a:hover {
-  background-color: #90abab;
+  background: #020c15;
+  box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
 }

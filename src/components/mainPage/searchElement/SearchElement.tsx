@@ -32,16 +32,14 @@ export const SearchElement = ({
   };
 
   return (
-    <>
-      <form className={style.searchForm}>
-        <input
-          placeholder="search element"
-          onChange={searchItem}
-          className={style.searchInput}
-          onKeyPress={enterPressed}
-        />
-        <ul className={style.autoComplete}>{searchTitle ? searchTitles : null}</ul>
-      </form>
-    </>
+    <form className={style.searchForm}>
+      <input
+        placeholder="search element"
+        onChange={searchItem}
+        className={style.searchInput}
+        onKeyPress={enterPressed}
+      />
+      <ul className={style.autoComplete}>{searchTitle ? searchTitles : null}</ul>
+    </form>
   );
 };

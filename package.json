@@ -14,6 +14,8 @@
     "axios": "^0.26.1",
     "classnames": "^2.3.1",
     "debounce": "^1.2.1",
+    "formik": "^2.2.9",
+    "material-ui": "^0.20.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^7.2.8",
