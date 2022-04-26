@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { CartItem, Items } from 'components/items';
 import { Header } from 'main/Header';
 import { MainPageContainer } from 'components/mainPage';
-import { History, Login, Logout, RegistrationContainer } from 'headerComponents';
+import { History, LoginContainer, Logout, RegistrationContainer } from 'headerComponents';
 import { AmmoCart, Ammos } from 'components/ammos';
 import { ArmorCart, Armors } from 'components/armors';
 import { ErrorPage } from 'components/errorPage';
@@ -15,7 +15,7 @@ const Main = () => {
       <Routes>
         <Route path="/" element={<MainPageContainer />} />
         <Route path="registration" element={<RegistrationContainer />} />
-        <Route path="login" element={<Login />} />
+        <Route path="login" element={<LoginContainer />} />
         <Route path="history" element={<History />} />
         <Route path="logout" element={<Logout />} />
         <Route path="ammos" element={<Ammos />} />

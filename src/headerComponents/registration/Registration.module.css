@@ -1,5 +1,6 @@
 .block {
   padding-top: 150px;
+  height: 120vh;
 }
 
 .form {
@@ -20,4 +21,11 @@
 .text {
   text-align: center;
   font-size: 30px;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
 }
