@@ -1,6 +1,14 @@
 export const getStorageName = (name: string) => {
-  const storageName = localStorage.getItem(name)!;
-  return JSON.parse(storageName)?.name !== name;
+  const storageObject = localStorage.getItem(name)!;
+  return JSON.parse(storageObject)?.name !== name;
+};
+
+export const getValidStorageData = (name: string, password: string) => {
+  const storageObject = localStorage.getItem(name)!;
+  return (
+    JSON.parse(storageObject)?.password === password &&
+    JSON.parse(storageObject)?.name === name
+  );
 };
 
 export const setUserData = (name: string, password: string) => {

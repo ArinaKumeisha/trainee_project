@@ -1,11 +1,10 @@
 import React, { ChangeEvent, FormEvent } from 'react';
-import { useAppDispatch } from 'reduxEntities';
 import style from './Registration.module.css';
 import s from 'common/commonStyle/Common.module.css';
 
 type Props = {
-  error: string;
   name: string;
+  error: string;
   password: string;
   setName: (name: string) => void;
   setError: (error: string) => void;
@@ -14,11 +13,11 @@ type Props = {
 };
 
 export const Registration = ({
-  error,
   name,
+  error,
   setName,
-  password,
   setError,
+  password,
   setPassword,
   completeRegistration,
 }: Props) => {
@@ -29,8 +28,8 @@ export const Registration = ({
 
   const createPassword = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.currentTarget.value);
+    setError('');
   };
-
   return (
     <div className={style.block}>
       <form onSubmit={completeRegistration}>

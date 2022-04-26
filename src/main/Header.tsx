@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import style from './Header.module.css';
 import { logout, useAppDispatch, useAppMainSelector } from 'reduxEntities';
-import { SuperButton } from 'common';
 
 export const Header = () => {
   const authorized = useAppMainSelector(state => state.registration.authorized);
@@ -21,7 +20,9 @@ export const Header = () => {
           <h1>{user.name}</h1>
           <NavLink to="/favorites">Favorites</NavLink>
           <NavLink to="/history">History</NavLink>
-          <SuperButton onClick={logoutHandler}>Logout</SuperButton>
+          <button onClick={logoutHandler} className={style.btn}>
+            Logout
+          </button>
         </div>
       ) : (
         <div className={style.navLinks}>

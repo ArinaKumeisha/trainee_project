@@ -11,9 +11,11 @@ export const RegistrationContainer = () => {
   const [name, setName] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
+
   const completeRegistration = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const validUserData = name.trim().length >= 5 && password.trim().length >= 5;
+
     if (!validUserData) {
       setError('You must enter more than 5 characters!');
     } else if (!getStorageName(name)) {
