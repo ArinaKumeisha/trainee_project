@@ -8,12 +8,10 @@ export type Users = {
 type InitialState = {
   user: Users;
   authorized: boolean;
-  error: string;
 };
 const initialState: InitialState = {
   user: { name: '', password: '' },
   authorized: false,
-  error: '',
 };
 
 export const registration = createSlice({
@@ -29,10 +27,7 @@ export const registration = createSlice({
       state.authorized = false;
       state.user = { name: '', password: '' };
     },
-    recognizeError(state: InitialState, action: PayloadAction<string>) {
-      state.error = action.payload;
-    },
   },
 });
 
-export const { recognizeError, setLoginData, logout } = registration.actions;
+export const { setLoginData, logout } = registration.actions;

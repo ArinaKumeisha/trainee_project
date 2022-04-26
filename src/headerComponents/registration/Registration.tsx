@@ -1,34 +1,36 @@
 import React, { ChangeEvent, FormEvent } from 'react';
-import { recognizeError, useAppDispatch, useAppMainSelector } from 'reduxEntities';
+import { useAppDispatch } from 'reduxEntities';
 import style from './Registration.module.css';
 import s from 'common/commonStyle/Common.module.css';
 
 type Props = {
+  error: string;
   name: string;
   password: string;
   setName: (name: string) => void;
+  setError: (error: string) => void;
   setPassword: (password: string) => void;
   completeRegistration: (event: FormEvent<HTMLFormElement>) => void;
 };
 
 export const Registration = ({
+  error,
   name,
   setName,
   password,
+  setError,
   setPassword,
   completeRegistration,
 }: Props) => {
-  const dispatch = useAppDispatch();
-
   const createName = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.currentTarget.value);
-    dispatch(recognizeError(''));
+    setError('');
   };
 
   const createPassword = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.currentTarget.value);
   };
-  const error = useAppMainSelector(state => state.registration.error);
+
   return (
     <div className={style.block}>
       <form onSubmit={completeRegistration}>
