@@ -12,11 +12,7 @@ export {
 } from 'reduxEntities/api/gamesAPI';
 export { setupStore } from 'reduxEntities/store';
 export type { RootState, AppStore, AppDispatch } from 'reduxEntities/store';
-export {
-  setLoginData,
-  recognizeError,
-  logout,
-} from 'reduxEntities/registration/registration';
+export { setLoginData, logout } from 'reduxEntities/registration/registration';
 export {
   useAppMainSelector,
   useAppDispatch,
