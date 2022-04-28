@@ -1,9 +1,8 @@
-import React, { FormEvent, useEffect, useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Login } from 'headerComponents';
 import { getStorageName, getValidStorageData } from 'utilities';
-import { addFavorites, setLoginData, useAppDispatch } from 'reduxEntities';
-import type { Favorite } from 'reduxEntities/userInfo/userInfo';
+import { setLoginData, useAppDispatch } from 'reduxEntities';
 
 export const LoginContainer = () => {
   const [name, setName] = useState('');
@@ -11,14 +10,6 @@ export const LoginContainer = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    let items;
-    if (localStorage.getItem(name)) {
-      items = JSON.parse(localStorage.getItem(name)!).favorites;
-    }
-    items && items.forEach((item: Favorite) => dispatch(addFavorites(item)));
-  }, [name]);
 
   const completeLogin = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();

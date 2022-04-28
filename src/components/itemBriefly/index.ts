@@ -1,1 +1,0 @@
-export { ItemBriefly } from './ItemBriefly';

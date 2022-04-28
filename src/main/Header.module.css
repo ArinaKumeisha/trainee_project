@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   background-color: #90abab;
   position: fixed;
@@ -9,11 +9,11 @@
 }
 
 .navLinks {
+  display: flex;
+  justify-content: flex-end;
   padding: 20px;
   color: #ebe7e7;
   width: 600px;
-  display: flex;
-  justify-content: space-between;
 }
 
 a {

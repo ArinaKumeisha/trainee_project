@@ -16,7 +16,7 @@ export {
   setLoginData,
   logout,
   addFavorites,
-  deleteItem,
+  removeFavorites,
 } from 'reduxEntities/userInfo/userInfo';
 export {
   useAppMainSelector,

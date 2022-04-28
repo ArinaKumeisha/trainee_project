@@ -1,11 +1,11 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import style from './Header.module.css';
 import { logout, useAppDispatch, useAppMainSelector } from 'reduxEntities';
+import style from './Header.module.css';
 
 export const Header = () => {
-  const authorized = useAppMainSelector(state => state.registration.authorized);
-  const user = useAppMainSelector(state => state.registration.user);
+  const authorized = useAppMainSelector(state => state.userInfo.authorized);
+  const user = useAppMainSelector(state => state.userInfo.user);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const logoutHandler = () => {
@@ -14,6 +14,7 @@ export const Header = () => {
   };
   return (
     <div className={style.container}>
+      <NavLink to="/">Back</NavLink>
       {authorized ? (
         <div className={style.navLinks}>
           <h1>{user.name}</h1>
@@ -25,8 +26,7 @@ export const Header = () => {
         </div>
       ) : (
         <div className={style.navLinks}>
-          <NavLink to="/userInfo">Registration</NavLink>
-          <NavLink to="/">Back</NavLink>
+          <NavLink to="/registration">Registration</NavLink>
           <NavLink to="/login">Login</NavLink>
         </div>
       )}

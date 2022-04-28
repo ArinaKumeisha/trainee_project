@@ -22,13 +22,14 @@ const initialState: InitialState = {
 };
 
 export const userInfo = createSlice({
-  name: 'registration',
+  name: 'user',
   initialState,
   reducers: {
     setLoginData(state: InitialState, action: PayloadAction<Users>) {
       state.authorized = true;
       state.user.name = action.payload.name;
       state.user.password = action.payload.password;
+      state.user.favorites = action.payload.favorites;
     },
     logout(state: InitialState) {
       state.authorized = false;
@@ -43,7 +44,7 @@ export const userInfo = createSlice({
       state.user.favorites.push(action.payload);
       localStorage.setItem(state.user.name, JSON.stringify(state.user));
     },
-    deleteItem(state: InitialState, action: PayloadAction<string>) {
+    removeFavorites(state: InitialState, action: PayloadAction<string>) {
       state.user.favorites = state.user.favorites.filter(
         item => item.id !== action.payload,
       );
@@ -52,4 +53,4 @@ export const userInfo = createSlice({
   },
 });
 
-export const { setLoginData, logout, addFavorites, deleteItem } = userInfo.actions;
+export const { setLoginData, logout, addFavorites, removeFavorites } = userInfo.actions;

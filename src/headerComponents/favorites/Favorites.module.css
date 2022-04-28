@@ -6,14 +6,22 @@
 }
 .item {
   width: 400px;
-  height: 400px;
+  min-height: 400px;
   padding: 30px;
   margin: 20px;
   background-color: #474a51;
   border-radius: 30px;
   box-shadow: #22497b 5px 5px 8px;
+  display: flex;
+  flex-flow: column;
 }
 .icon {
+  order: 999;
+  margin-left: auto;
   width: 50px;
   height: 50px;
+}
+.icon:hover {
+  background-color: #585b62;
+  box-shadow: #22497b 5px 5px 8px;
 }

@@ -15,3 +15,4 @@ export {
   getStorageName,
   setUserData,
 } from './universalFunction/storage';
+export { savingPreviousState } from './middleware/savingPreviousState';

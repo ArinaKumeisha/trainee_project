@@ -11,7 +11,6 @@ import {
   RegistrationContainer,
 } from 'headerComponents';
 import { AmmoCart, Ammos } from 'components/ammos';
-import { ArmorCart, Armors } from 'components/armors';
 import { ErrorPage } from 'components/errorPage';
 
 const Main = () => {
@@ -20,14 +19,12 @@ const Main = () => {
       <Header />
       <Routes>
         <Route path="/" element={<MainPageContainer />} />
-        <Route path="userInfo" element={<RegistrationContainer />} />
+        <Route path="registration" element={<RegistrationContainer />} />
         <Route path="login" element={<LoginContainer />} />
         <Route path="history" element={<History />} />
         <Route path="logout" element={<Logout />} />
         <Route path="ammos" element={<Ammos />} />
         <Route path="ammos/:itemId" element={<AmmoCart />} />
-        <Route path="armors" element={<Armors />} />
-        <Route path="armors/:itemId" element={<ArmorCart />} />
         <Route path="items" element={<Items />} />
         <Route path="items/:itemId" element={<CartItem />} />
         <Route path="favorites" element={<Favorites />} />
