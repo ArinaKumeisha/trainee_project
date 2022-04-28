@@ -12,8 +12,14 @@ export {
 } from 'reduxEntities/api/gamesAPI';
 export { setupStore } from 'reduxEntities/store';
 export type { RootState, AppStore, AppDispatch } from 'reduxEntities/store';
-export { setLoginData, logout } from 'reduxEntities/registration/registration';
+export {
+  setLoginData,
+  logout,
+  addFavorites,
+  deleteItem,
+} from 'reduxEntities/userInfo/userInfo';
 export {
   useAppMainSelector,
   useAppDispatch,
 } from 'reduxEntities/customHooks/customHooks';
+//export { addFavorites } from './favorites/favorites';

@@ -13,9 +13,5 @@ export const Ammo = ({ shortCart }: Props) => {
     return navigate(`/ammos/${shortCart.id}`);
   };
 
-  return (
-    <div onClick={redirectionToCart}>
-      <ItemBriefly shortCart={shortCart} />
-    </div>
-  );
+  return <ItemBriefly shortCart={shortCart} redirectionToCart={redirectionToCart} />;
 };

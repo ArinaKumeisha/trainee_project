@@ -13,9 +13,5 @@ export const Item = ({ shortCart }: Props) => {
     return navigate(`/items/${shortCart.id}`);
   };
 
-  return (
-    <div onClick={redirectionToCart} role="button" tabIndex={0}>
-      <ItemBriefly shortCart={shortCart} />
-    </div>
-  );
+  return <ItemBriefly shortCart={shortCart} redirectionToCart={redirectionToCart} />;
 };

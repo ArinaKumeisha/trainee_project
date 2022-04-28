@@ -2,11 +2,11 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { itemsAPI } from 'reduxEntities';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { registration } from 'reduxEntities/registration/registration';
+import { userInfo } from 'reduxEntities/userInfo/userInfo';
 
 const rootReducer = combineReducers({
   [itemsAPI.reducerPath]: itemsAPI.reducer,
-  registration: registration.reducer,
+  registration: userInfo.reducer,
 });
 const persistConfig = {
   key: 'reduxState',

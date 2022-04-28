@@ -1,0 +1,19 @@
+.container {
+  padding-top: 130px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+}
+.item {
+  width: 400px;
+  height: 400px;
+  padding: 30px;
+  margin: 20px;
+  background-color: #474a51;
+  border-radius: 30px;
+  box-shadow: #22497b 5px 5px 8px;
+}
+.icon {
+  width: 50px;
+  height: 50px;
+}

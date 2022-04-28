@@ -8,7 +8,6 @@ export const Header = () => {
   const user = useAppMainSelector(state => state.registration.user);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-
   const logoutHandler = () => {
     dispatch(logout());
     navigate('/');
@@ -26,7 +25,7 @@ export const Header = () => {
         </div>
       ) : (
         <div className={style.navLinks}>
-          <NavLink to="/registration">Registration</NavLink>
+          <NavLink to="/userInfo">Registration</NavLink>
           <NavLink to="/">Back</NavLink>
           <NavLink to="/login">Login</NavLink>
         </div>

@@ -1,6 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import { SearchElement } from 'components/mainPage';
 import style from './MainPage.module.css';
+import { useAppMainSelector } from 'reduxEntities';
 
 type PropsType = {
   onSearchHandler: (value: ChangeEvent<HTMLInputElement>) => void;

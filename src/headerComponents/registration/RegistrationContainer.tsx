@@ -21,8 +21,8 @@ export const RegistrationContainer = () => {
     } else if (!getStorageName(name)) {
       setError('User with this name exists');
     } else {
-      setUserData(name, password);
-      dispatch(setLoginData({ name, password }));
+      setUserData(name, password, []);
+      dispatch(setLoginData({ name, password, favorites: [] }));
       return navigate('/');
     }
   };

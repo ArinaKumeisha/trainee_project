@@ -79,3 +79,29 @@
   text-shadow: whitesmoke 0.5px 0.5px;
   font-size: 30px;
 }
+
+.favoriteBtn {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  margin-left: 30px;
+  border: none;
+  font-size: 20px;
+}
+
+.favoriteBtn:hover {
+  background-color: #8c0606;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 40px;
+  height: 40px;
+}

@@ -13,9 +13,5 @@ export const Armor = ({ shortCart }: Props) => {
     return navigate(`/armors/${shortCart.id}`);
   };
 
-  return (
-    <div onClick={redirectionToCart}>
-      <ItemBriefly shortCart={shortCart} />
-    </div>
-  );
+  return <ItemBriefly shortCart={shortCart} redirectionToCart={redirectionToCart} />;
 };

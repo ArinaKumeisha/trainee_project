@@ -3,7 +3,7 @@
 - папка common - для общего использования(superButton, superInput, уже с пропсами)
 - папка components для всех вариаций элементов в выпадающем списке
 - папка cover - начальная страница с поиском
-- папка headerComponents - для страниц в шапке сайта(login, registration, history, favorite)
+- папка headerComponents - для страниц в шапке сайта(login, userInfo, history, favorite)
 - папка main - c Routes , а внутри папка header - с NavLinks
 - испробовала запрос на items
 - подключила RTK и redux
@@ -21,8 +21,10 @@
 
 
 3) ветка feature_3
-Немножко подправила регистрацию. И сделала логинизацию. Для логинизации переиспользовала slice registration
+Немножко подправила регистрацию. И сделала логинизацию. Для логинизации переиспользовала slice userInfo
 
+4) ветка feature_4
+Сделала логику избранного, переименовала slice registration на userInfo.  
 
 
 
