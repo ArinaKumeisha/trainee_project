@@ -1,28 +1,29 @@
 import React, { ChangeEvent } from 'react';
 import { SuperInputText } from 'common';
+import { addHistory, useAppDispatch } from 'reduxEntities';
+import { useCustomDebounce } from 'utilities';
 
 type Props = {
   setSearchParams: (value: { name: string } | {}) => void;
+  endpoint: string;
 };
 
-export const SearchName = ({ setSearchParams }: Props) => {
-  const search = (event: ChangeEvent<HTMLInputElement>) => {
-    const debounce = setTimeout(() => {
-      const name = event.target.value.toLowerCase();
-      if (name) {
-        setSearchParams({ name });
-      } else {
-        setSearchParams({});
-      }
-    }, 3000);
+export const SearchName = ({ setSearchParams, endpoint }: Props) => {
+  const dispatch = useAppDispatch();
 
-    return () => {
-      clearTimeout(debounce);
-    };
+  const search = (event: ChangeEvent<HTMLInputElement>) => {
+    let name = event.target.value.toLowerCase();
+    if (name) {
+      setSearchParams({ name });
+      dispatch(addHistory(`${endpoint}${name}`));
+    } else {
+      setSearchParams({});
+    }
   };
+
+  const searchTitleHandler = useCustomDebounce(search, 3000);
+
   return (
-    <div>
-      <SuperInputText placeholder="enter name" onChange={search} autoFocus />
-    </div>
+    <SuperInputText placeholder="enter name" onChange={searchTitleHandler} autoFocus />
   );
 };

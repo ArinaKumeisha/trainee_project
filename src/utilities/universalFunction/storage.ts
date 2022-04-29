@@ -13,6 +13,11 @@ export const getValidStorageData = (name: string, password: string) => {
   );
 };
 
-export const setUserData = (name: string, password: string, favorites: Favorite[]) => {
-  localStorage.setItem(name, JSON.stringify({ name, password, favorites }));
+export const setUserData = (
+  name: string,
+  password: string,
+  favorites: Favorite[],
+  history: string[],
+) => {
+  localStorage.setItem(name, JSON.stringify({ name, password, favorites, history }));
 };

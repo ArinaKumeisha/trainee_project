@@ -5,9 +5,10 @@ export {
   countItems,
   enteredSearch,
   filteredMainTitles,
+  cutString,
 } from 'utilities/universalFunction/universals';
 
-export { useCustomParams } from 'utilities/customHooks/customHooks';
+export { useCustomParams, useCustomDebounce } from 'utilities/customHooks/customHooks';
 export { titlesForSearch } from 'utilities/universalFunction/titlesForSearch';
 export type { TitleSearch } from 'utilities/universalFunction/titlesForSearch';
 export {
@@ -16,3 +17,4 @@ export {
   setUserData,
 } from './universalFunction/storage';
 export { savingPreviousState } from './middleware/savingPreviousState';
+export { ITEMS_URL, AMMOS_URL } from './universalFunction/variables';

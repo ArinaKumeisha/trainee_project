@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { countItems, enteredSearch } from 'utilities';
+import { countItems, enteredSearch, ITEMS_URL } from 'utilities';
 import { Item } from 'components/items';
 import { useGetItemsQuery } from 'reduxEntities';
 import { SearchName } from 'components/searchName';
@@ -10,11 +10,11 @@ export const Items = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const postQuery = searchParams.get('name') || '';
   const { data: items } = useGetItemsQuery(postQuery);
+  const endpoint = ITEMS_URL;
   const searchValues = items && enteredSearch(items.data, postQuery);
-
   return (
     <div>
-      <SearchName setSearchParams={setSearchParams} />
+      <SearchName setSearchParams={setSearchParams} endpoint={endpoint} />
       <h1>{items && countItems(items)}</h1>
       <div className={s.mainContainer}>
         {searchValues &&

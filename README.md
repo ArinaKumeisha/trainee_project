@@ -26,6 +26,9 @@
 4) ветка feature_4
 Сделала логику избранного, переименовала slice registration на userInfo.  
 
+5) ветка feature_5
+6) Сделала историю. Создала custom hook useDebounce. 
+
 
 
 

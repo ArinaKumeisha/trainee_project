@@ -19,7 +19,14 @@ export const LoginContainer = () => {
       setError('Wrong password or name!');
     } else {
       const userData = JSON.parse(localStorage.getItem(name)!);
-      dispatch(setLoginData({ name, password, favorites: userData.favorites }));
+      dispatch(
+        setLoginData({
+          name,
+          password,
+          favorites: userData.favorites,
+          history: userData.history,
+        }),
+      );
       return navigate('/');
     }
   };

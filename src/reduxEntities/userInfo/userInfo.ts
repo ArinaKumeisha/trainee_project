@@ -10,6 +10,7 @@ export type Users = {
   name: string;
   password: string;
   favorites: Favorite[];
+  history: string[];
 };
 
 type InitialState = {
@@ -17,7 +18,7 @@ type InitialState = {
   authorized: boolean;
 };
 const initialState: InitialState = {
-  user: { name: '', password: '', favorites: [] },
+  user: { name: '', password: '', favorites: [], history: [] },
   authorized: false,
 };
 
@@ -30,6 +31,7 @@ export const userInfo = createSlice({
       state.user.name = action.payload.name;
       state.user.password = action.payload.password;
       state.user.favorites = action.payload.favorites;
+      state.user.history = action.payload.history;
     },
     logout(state: InitialState) {
       state.authorized = false;
@@ -37,6 +39,7 @@ export const userInfo = createSlice({
         name: '',
         password: '',
         favorites: [],
+        history: [],
       };
     },
 
@@ -50,7 +53,12 @@ export const userInfo = createSlice({
       );
       localStorage.setItem(state.user.name, JSON.stringify(state.user));
     },
+    addHistory(state: InitialState, action: PayloadAction<string>) {
+      state.user.history.push(action.payload);
+      localStorage.setItem(state.user.name, JSON.stringify(state.user));
+    },
   },
 });
 
-export const { setLoginData, logout, addFavorites, removeFavorites } = userInfo.actions;
+export const { setLoginData, logout, addFavorites, removeFavorites, addHistory } =
+  userInfo.actions;

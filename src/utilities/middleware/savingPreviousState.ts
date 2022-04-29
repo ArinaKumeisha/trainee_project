@@ -5,20 +5,28 @@ export const savingPreviousState =
   (store: any) => (next: Function) => (action: PayloadAction<Users>) => {
     let result;
     let currentStore = store.getState();
-    let items;
+    let itemsFavorites;
+    let itemHistory;
 
     if (action.type === 'user/setLoginData') {
       if (localStorage.getItem(currentStore.userInfo.user.name)) {
-        items = JSON.parse(
+        itemsFavorites = JSON.parse(
           localStorage.getItem(currentStore.userInfo.user.name)!,
         ).favorites;
+
+        if (localStorage.getItem(currentStore.userInfo.user.name)!) {
+          itemHistory = JSON.parse(
+            localStorage.getItem(currentStore.userInfo.user.name)!,
+          ).history;
+        }
       }
       localStorage.setItem(
         currentStore.userInfo.user.name,
         JSON.stringify({
           name: currentStore.userInfo.user.name,
           password: currentStore.userInfo.user.password,
-          favorites: items,
+          favorites: itemsFavorites,
+          history: itemHistory,
         }),
       );
       result = next(action);

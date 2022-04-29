@@ -16,3 +16,10 @@ export const enteredSearch = (items: Items[], value: string) => {
 export const filteredMainTitles = (items: TitleSearch[], value: string) => {
   return items?.filter(el => el.title.toLowerCase().includes(value.toLowerCase()));
 };
+export const cutString = (str: string) => {
+  if (str.includes('=')) {
+    return str.split('=')[1];
+  } else {
+    return str;
+  }
+};
