@@ -1,6 +1,7 @@
 import React from 'react';
 
 export const ItemsContext = React.createContext({
-  name: '',
-  setName: (name: string) => {},
+  postQuery: '',
+  setSearchParams: (value: {} | { name: string }) => {},
+  searchParams: {},
 });

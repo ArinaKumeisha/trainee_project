@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Main from './main/Main';
 import { ItemsContext } from 'utilities';
 import './App.css';
+import { useSearchParams } from 'react-router-dom';
 
 const App = () => {
-  const [name, setName] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const postQuery = searchParams.get('name') || '';
   return (
     <div className="App">
       <ItemsContext.Provider
         value={{
-          name,
-          setName,
+          searchParams,
+          setSearchParams,
+          postQuery,
         }}
       >
         <Main />
