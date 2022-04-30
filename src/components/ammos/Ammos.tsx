@@ -6,14 +6,14 @@ import { SearchName } from 'components/searchName';
 import s from 'common/commonStyle/Common.module.css';
 
 export const Ammos = () => {
-  const { searchParams, setSearchParams, postQuery } = useContext(ItemsContext);
+  const { postQuery } = useContext(ItemsContext);
   const { data: items } = useGetAmmosQuery(postQuery);
   const endpoint = AMMOS_URL;
   const searchValues = items && enteredSearch(items.data, postQuery);
 
   return (
     <div>
-      <SearchName setSearchParams={setSearchParams} endpoint={endpoint} />
+      <SearchName endpoint={endpoint} />
       <h1>{items && countItems(items)}</h1>
       <div className={s.mainContainer}>
         {searchValues &&

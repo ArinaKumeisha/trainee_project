@@ -1,15 +1,15 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, useContext } from 'react';
 import { SuperInputText } from 'common';
 import { addHistory, useAppDispatch } from 'reduxEntities';
-import { useCustomDebounce } from 'utilities';
+import { ItemsContext, useCustomDebounce } from 'utilities';
 
 type Props = {
-  setSearchParams: (value: { name: string } | {}) => void;
   endpoint: string;
 };
 
-export const SearchName = ({ setSearchParams, endpoint }: Props) => {
+export const SearchName = ({ endpoint }: Props) => {
   const dispatch = useAppDispatch();
+  const { setSearchParams } = useContext(ItemsContext);
 
   const search = (event: ChangeEvent<HTMLInputElement>) => {
     let name = event.target.value.toLowerCase();
