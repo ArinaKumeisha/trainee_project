@@ -8,12 +8,11 @@ import s from 'common/commonStyle/Common.module.css';
 export const Ammos = () => {
   const { postQuery } = useContext(ItemsContext);
   const { data: items } = useGetAmmosQuery(postQuery);
-  const endpoint = AMMOS_URL;
   const searchValues = items && enteredSearch(items.data, postQuery);
 
   return (
     <div>
-      <SearchName endpoint={endpoint} />
+      <SearchName endpoint={AMMOS_URL} />
       <h1>{items && countItems(items)}</h1>
       <div className={s.mainContainer}>
         {searchValues &&
