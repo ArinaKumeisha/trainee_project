@@ -1,11 +1,17 @@
 .container {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   padding-top: 150px;
   width: 100%;
 }
 
+.items {
+  display: flex;
+  flex-direction: column;
+}
 .item {
+  display: flex;
+  flex-direction: column;
   background-color: #3b83e0;
   width: 200px;
   margin: 20px;

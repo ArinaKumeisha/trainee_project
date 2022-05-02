@@ -1,26 +1,35 @@
 import React from 'react';
-import { useAppMainSelector } from 'reduxEntities';
+import { clearHistory, useAppDispatch, useAppMainSelector } from 'reduxEntities';
 import style from './History.module.css';
 import { useNavigate } from 'react-router-dom';
 import { cutString } from 'utilities';
+import { SuperButton } from 'common';
 
 export const History = () => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   const history = useAppMainSelector(state => state.userInfo.user.history);
-  const handler = (name: string) => {
+
+  const backToSearch = (name: string) => {
     navigate(`/${name}`);
   };
-
+  const clearHistoryHandler = () => {
+    dispatch(clearHistory());
+  };
+  const historyItems = history.map((item, index) => {
+    return (
+      <button key={index} className={style.item} onClick={() => backToSearch(item)}>
+        title: <span className={style.letter}>{cutString(item)}</span>
+      </button>
+    );
+  });
   return (
     <div className={style.container}>
       {history.length ? (
-        history.map((item, index) => {
-          return (
-            <button key={index} className={style.item} onClick={() => handler(item)}>
-              title: <span className={style.letter}>{cutString(item)}</span>
-            </button>
-          );
-        })
+        <>
+          <div className={style.items}>{historyItems}</div>
+          <SuperButton onClick={clearHistoryHandler}>clear all</SuperButton>
+        </>
       ) : (
         <h1>There's nothing here!</h1>
       )}

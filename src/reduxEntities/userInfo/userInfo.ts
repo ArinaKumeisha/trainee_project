@@ -16,12 +16,10 @@ export type Users = {
 type InitialState = {
   user: Users;
   authorized: boolean;
-  valueHistory: string;
 };
 const initialState: InitialState = {
   user: { name: '', password: '', favorites: [], history: [] },
   authorized: false,
-  valueHistory: '',
 };
 
 export const userInfo = createSlice({
@@ -59,8 +57,8 @@ export const userInfo = createSlice({
       state.user.history.push(action.payload);
       localStorage.setItem(state.user.name, JSON.stringify(state.user));
     },
-    setValueHistory(state: InitialState, action: PayloadAction<string>) {
-      state.valueHistory = action.payload;
+    clearHistory(state: InitialState) {
+      state.user.history = [];
     },
   },
 });
@@ -71,5 +69,5 @@ export const {
   addFavorites,
   removeFavorites,
   addHistory,
-  setValueHistory,
+  clearHistory,
 } = userInfo.actions;
