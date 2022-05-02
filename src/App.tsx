@@ -3,6 +3,7 @@ import Main from './main/Main';
 import { ItemsContext } from 'utilities';
 import './App.css';
 import { useSearchParams } from 'react-router-dom';
+import { ErrorBoundary } from 'components/errorBoundary';
 
 const App = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -16,7 +17,9 @@ const App = () => {
           postQuery,
         }}
       >
-        <Main />
+        <ErrorBoundary>
+          <Main />
+        </ErrorBoundary>
       </ItemsContext.Provider>
     </div>
   );
