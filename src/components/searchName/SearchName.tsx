@@ -10,9 +10,8 @@ type Props = {
 export const SearchName = ({ endpoint }: Props) => {
   const dispatch = useAppDispatch();
   const { setSearchParams } = useContext(ItemsContext);
-
   const search = (event: ChangeEvent<HTMLInputElement>) => {
-    let name = event.target.value.toLowerCase();
+    const name = event.target.value.toLowerCase();
     if (name) {
       setSearchParams({ name });
       dispatch(addHistory(`${endpoint}${name}`));

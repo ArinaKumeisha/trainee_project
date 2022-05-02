@@ -18,9 +18,9 @@ export {
   addFavorites,
   removeFavorites,
   addHistory,
+  setValueHistory,
 } from 'reduxEntities/userInfo/userInfo';
 export {
   useAppMainSelector,
   useAppDispatch,
 } from 'reduxEntities/customHooks/customHooks';
-//export { addFavorites } from './favorites/favorites';

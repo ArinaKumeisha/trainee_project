@@ -21,7 +21,7 @@ export const Item = ({ shortCart }: Props) => {
 
   const userFavorites = useAppMainSelector(state => state.userInfo.user.favorites);
   const favoriteItem = userFavorites.find(el => el.name === name);
-  const [includedItem, setIncludedItem] = useState(false);
+  const [includedItem, setIncludedItem] = useState(favoriteItem && true);
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -32,7 +32,7 @@ export const Item = ({ shortCart }: Props) => {
 
   const deleteItem = (itemId: string) => {
     dispatch(removeFavorites(itemId));
-    setIncludedItem(false);
+    setIncludedItem(includedItem);
   };
 
   const addItem = () => {
@@ -40,7 +40,7 @@ export const Item = ({ shortCart }: Props) => {
       navigate('/login');
     } else if (!favoriteItem) {
       dispatch(addFavorites({ id, name, description, image }));
-      setIncludedItem(true);
+      setIncludedItem(!includedItem);
     }
   };
 
