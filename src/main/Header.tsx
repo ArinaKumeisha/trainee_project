@@ -17,7 +17,7 @@ export const Header = () => {
       <NavLink to="/">Back</NavLink>
       {authorized ? (
         <div className={style.navLinks}>
-          <h1>{user.name}</h1>
+          <div className={style.name}>{user.name}</div>
           <NavLink to="/favorites">Favorites</NavLink>
           <NavLink to="/history">History</NavLink>
           <button onClick={logoutHandler} className={style.btn}>
