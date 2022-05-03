@@ -1,8 +1,8 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppMainSelector } from 'reduxEntities';
-import { useEffect } from 'react';
 
-export const RequireAuth = ({ children }) => {
+export const RequireAuth = ({ children }: any) => {
   const authorized = useAppMainSelector(state => state.userInfo.authorized);
   const navigate = useNavigate();
 
@@ -10,7 +10,7 @@ export const RequireAuth = ({ children }) => {
     if (!authorized) {
       return navigate('/login');
     }
-  }, [authorized]);
+  }, [navigate, authorized]);
 
   return children;
 };

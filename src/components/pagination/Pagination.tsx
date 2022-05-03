@@ -11,9 +11,8 @@ type Props = {
 export const Pagination = ({ cardPacksTotalCount }: Props) => {
   const { page, setSearchParams } = useContext(ItemsContext);
 
-  console.log(cardPacksTotalCount);
   const dispatch = useDispatch();
-  let pageCount = 10; // кол-во элементов на одной стр
+  let pageCount = 10;
 
   const currentPageHandler = (page: number) => {
     setSearchParams({ limit: 10, page });

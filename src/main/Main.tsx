@@ -7,7 +7,6 @@ import {
   Favorites,
   History,
   LoginContainer,
-  Logout,
   RegistrationContainer,
 } from 'headerComponents';
 import { AmmoCart, Ammos } from 'components/ammos';
@@ -30,7 +29,6 @@ const Main = () => {
             </RequireAuth>
           }
         />
-        <Route path="logout" element={<Logout />} />
         <Route path="ammos" element={<Ammos />} />
         <Route path="ammos/:itemId" element={<AmmoCart />} />
         <Route path="items" element={<Items />} />
