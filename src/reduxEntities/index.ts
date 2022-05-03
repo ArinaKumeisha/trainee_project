@@ -1,14 +1,9 @@
 export {
-  useGetAmmosQuery,
-  useGetOneAmmoQuery,
-  useGetArmorsQuery,
-  useGetOneArmorQuery,
-} from 'reduxEntities/api/extendedAPI';
-
-export {
   useGetItemsQuery,
   useGetOneItemQuery,
   itemsAPI,
+  useGetAmmosQuery,
+  useGetOneAmmoQuery,
 } from 'reduxEntities/api/gamesAPI';
 export { setupStore } from 'reduxEntities/store';
 export type { RootState, AppStore, AppDispatch } from 'reduxEntities/store';
@@ -24,3 +19,4 @@ export {
   useAppMainSelector,
   useAppDispatch,
 } from 'reduxEntities/customHooks/customHooks';
+export { setCurrentPage } from './pagination/pagination';

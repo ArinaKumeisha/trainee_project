@@ -31,5 +31,7 @@
    Попозже еще добавила компоненты  ItemPage и createContext. 
 
 
-
+7) ветка feature_6
+8) Добавила Error Boundary
+Добавила clearHistory функцию.
 

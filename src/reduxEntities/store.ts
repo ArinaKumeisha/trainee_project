@@ -4,10 +4,12 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { userInfo } from 'reduxEntities/userInfo/userInfo';
 import { savingPreviousState } from 'utilities';
+import { pagination } from 'reduxEntities/pagination/pagination';
 
 const rootReducer = combineReducers({
   [itemsAPI.reducerPath]: itemsAPI.reducer,
   userInfo: userInfo.reducer,
+  pagination: pagination.reducer,
 });
 const persistConfig = {
   key: 'reduxState',
@@ -24,6 +26,7 @@ export const setupStore = () => {
       getDefaultMiddleware({
         serializableCheck: {
           ignoredActions: ['persist/PERSIST'],
+          serializableCheck: false,
         },
       }).concat([itemsAPI.middleware, savingPreviousState]),
   });

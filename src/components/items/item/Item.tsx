@@ -32,7 +32,7 @@ export const Item = ({ shortCart }: Props) => {
 
   const deleteItem = (itemId: string) => {
     dispatch(removeFavorites(itemId));
-    setIncludedItem(includedItem);
+    setIncludedItem(false);
   };
 
   const addItem = () => {
@@ -40,7 +40,7 @@ export const Item = ({ shortCart }: Props) => {
       navigate('/login');
     } else if (!favoriteItem) {
       dispatch(addFavorites({ id, name, description, image }));
-      setIncludedItem(!includedItem);
+      setIncludedItem(true);
     }
   };
 

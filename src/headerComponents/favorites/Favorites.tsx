@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { removeFavorites, useAppDispatch, useAppMainSelector } from 'reduxEntities';
 import { Favorite } from 'reduxEntities/userInfo/userInfo';
 import { AiOutlineDelete } from 'react-icons/ai';
@@ -8,8 +8,10 @@ export const Favorites = () => {
   const userName = useAppMainSelector(state => state.userInfo.user.name);
   const userFavorites = JSON.parse(localStorage.getItem(userName)!).favorites;
   const dispatch = useAppDispatch();
+  const [removeItem, setRemoveItem] = useState('');
 
   const deleteItem = (itemId: string) => {
+    setRemoveItem(itemId);
     dispatch(removeFavorites(itemId));
   };
 

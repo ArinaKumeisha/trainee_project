@@ -7,14 +7,18 @@ import { ErrorBoundary } from 'components/errorBoundary';
 
 const App = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const postQuery = searchParams.get('name') || '';
+  const name = searchParams.get('name') || '';
+  const limit = searchParams.get('limit') || '';
+  const page = searchParams.get('page') || '';
   return (
     <div className="App">
       <ItemsContext.Provider
         value={{
           searchParams,
           setSearchParams,
-          postQuery,
+          name,
+          limit,
+          page,
         }}
       >
         <ErrorBoundary>

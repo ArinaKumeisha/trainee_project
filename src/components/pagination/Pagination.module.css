@@ -1,0 +1,25 @@
+.pagination {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  width: 50px;
+  height: 30px;
+  margin: 10px;
+}
+
+.item {
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+  background-color: #737396;
+  box-shadow: white 1px 1px 5px;
+  padding: 7px;
+  text-align: center;
+  cursor: pointer;
+}
+.item:hover {
+  background-color: #0c1639;
+}

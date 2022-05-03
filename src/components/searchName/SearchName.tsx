@@ -15,8 +15,6 @@ export const SearchName = ({ endpoint }: Props) => {
     if (name) {
       setSearchParams({ name });
       dispatch(addHistory(`${endpoint}${name}`));
-    } else {
-      setSearchParams({});
     }
   };
 

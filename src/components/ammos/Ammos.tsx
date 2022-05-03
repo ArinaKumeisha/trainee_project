@@ -4,16 +4,22 @@ import { Ammo } from 'components/ammos';
 import { useGetAmmosQuery } from 'reduxEntities';
 import { SearchName } from 'components/searchName';
 import s from 'common/commonStyle/Common.module.css';
+import { Pagination } from 'components/pagination/Pagination';
 
 export const Ammos = () => {
-  const { postQuery } = useContext(ItemsContext);
-  const { data: items } = useGetAmmosQuery(postQuery);
-  const searchValues = items && enteredSearch(items.data, postQuery);
-
+  const { page, name } = useContext(ItemsContext);
+  const { data: items } = useGetAmmosQuery({
+    name: name,
+    page: +page,
+    limit: 10,
+  });
+  console.log(items?.data);
+  const searchValues = items && enteredSearch(items.data, name);
   return (
     <div>
       <SearchName endpoint={AMMOS_URL} />
       <h1>{items && countItems(items)}</h1>
+      <Pagination cardPacksTotalCount={items!.total} />
       <div className={s.mainContainer}>
         {searchValues &&
           searchValues.map(element => {
