@@ -7,11 +7,11 @@ import s from 'common/commonStyle/Common.module.css';
 import { Pagination } from 'components/pagination/Pagination';
 
 export const Items = () => {
-  const { page, name, limit } = useContext(ItemsContext);
+  const { page, name } = useContext(ItemsContext);
   const { data: items } = useGetItemsQuery({
     name: name,
     page: +page,
-    limit: +limit,
+    limit: 10,
   });
   const searchValues = items && enteredSearch(items.data, name);
   return (
