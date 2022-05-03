@@ -27,11 +27,16 @@
 Сделала логику избранного, переименовала slice registration на userInfo.  
 
 5) ветка feature_5
-6) Сделала историю. Создала custom hook useDebounce. 
+ Сделала историю. Создала custom hook useDebounce. 
    Попозже еще добавила компоненты  ItemPage и createContext. 
 
 
-7) ветка feature_6
-8) Добавила Error Boundary
+6) ветка feature_6
+Добавила Error Boundary
 Добавила clearHistory функцию.
+ Сделала пагинацию.
+
+
+7)ветка feature_7 
+Сделала приватные роутеры
 
