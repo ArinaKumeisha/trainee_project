@@ -10,9 +10,12 @@ export const MainPage = ({ onclickHandler }: PropsType) => {
     <div className={style.container}>
       <div className={style.settings}>
         <h1 className={style.title}> Elden Ring</h1>
-
-        <SuperButton onClick={() => onclickHandler('items')}>Items</SuperButton>
-        <SuperButton onClick={() => onclickHandler('ammos')}>Ammos</SuperButton>
+        <SuperButton onClick={() => onclickHandler('items')} className={style.btn}>
+          Items
+        </SuperButton>
+        <SuperButton onClick={() => onclickHandler('ammos')} className={style.btn}>
+          Ammos
+        </SuperButton>
       </div>
       <div className={style.description}>
         The Elden Ring is an amazing game released by FromSoftware in 2022. In our site
