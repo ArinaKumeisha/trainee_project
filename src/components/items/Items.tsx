@@ -4,7 +4,6 @@ import { Item } from 'components/items';
 import { useGetItemsQuery } from 'reduxEntities';
 import { SearchName } from 'components/searchName';
 import s from 'common/commonStyle/Common.module.css';
-import { Pagination } from 'components/pagination/Pagination';
 
 export const Items = () => {
   const { page, name } = useContext(ItemsContext);
@@ -18,7 +17,6 @@ export const Items = () => {
     <div>
       <SearchName endpoint={ITEMS_URL} />
       <h1>{items && countItems(items)}</h1>
-      <Pagination cardPacksTotalCount={items!.total} />
       <div className={s.mainContainer}>
         {searchValues &&
           searchValues.map(element => {

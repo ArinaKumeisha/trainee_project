@@ -1,30 +1,18 @@
-import React, { ChangeEvent } from 'react';
-import { SearchElement } from 'components/mainPage';
+import React from 'react';
 import style from './MainPage.module.css';
+import { SuperButton } from 'common';
 
 type PropsType = {
-  onSearchHandler: (value: ChangeEvent<HTMLInputElement>) => void;
-  searchTitle: string;
   onclickHandler: (title: string) => void;
-  filteredTitles: { title: string }[];
 };
-export const MainPage = ({
-  onSearchHandler,
-  searchTitle,
-  onclickHandler,
-  filteredTitles,
-}: PropsType) => {
+export const MainPage = ({ onclickHandler }: PropsType) => {
   return (
     <div className={style.container}>
       <div className={style.settings}>
         <h1 className={style.title}> Elden Ring</h1>
 
-        <SearchElement
-          getItem={onclickHandler}
-          searchItem={onSearchHandler}
-          filteredTitles={filteredTitles}
-          searchTitle={searchTitle}
-        />
+        <SuperButton onClick={() => onclickHandler('items')}>Items</SuperButton>
+        <SuperButton onClick={() => onclickHandler('ammos')}>Ammos</SuperButton>
       </div>
       <div className={style.description}>
         The Elden Ring is an amazing game released by FromSoftware in 2022. In our site
