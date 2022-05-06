@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/trainee_project/static/css/main.9459986e.css",
+    "main.js": "/trainee_project/static/js/main.1304da6a.js",
+    "static/media/cover2.jpg": "/trainee_project/static/media/cover2.f31785119d4bc13808a1.jpg",
+    "index.html": "/trainee_project/index.html",
+    "main.9459986e.css.map": "/trainee_project/static/css/main.9459986e.css.map",
+    "main.1304da6a.js.map": "/trainee_project/static/js/main.1304da6a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9459986e.css",
+    "static/js/main.1304da6a.js"
+  ]
+}
