@@ -14,21 +14,31 @@ export const Header = () => {
   };
   return (
     <div className={style.container}>
-      <NavLink to="/">Back</NavLink>
+      <NavLink to="/" className={style.link}>
+        Back
+      </NavLink>
       {authorized ? (
-        <div className={style.navLinks}>
-          <div className={style.name}>{user.name}</div>
-          <NavLink to="/favorites">Favorites</NavLink>
-          <NavLink to="/history">History</NavLink>
-          <button onClick={logoutHandler} className={style.btn}>
+        <>
+          <div className={style.link}>{user.name}</div>
+          <NavLink to="/favorites" className={style.link}>
+            Favorites
+          </NavLink>
+          <NavLink to="/history" className={style.link}>
+            History
+          </NavLink>
+          <div onClick={logoutHandler} className={style.link}>
             Logout
-          </button>
-        </div>
+          </div>
+        </>
       ) : (
-        <div className={style.navLinks}>
-          <NavLink to="/registration">Registration</NavLink>
-          <NavLink to="/login">Login</NavLink>
-        </div>
+        <>
+          <NavLink to="/registration" className={style.link}>
+            Registration
+          </NavLink>
+          <NavLink to="/login" className={style.link}>
+            Login
+          </NavLink>
+        </>
       )}
     </div>
   );

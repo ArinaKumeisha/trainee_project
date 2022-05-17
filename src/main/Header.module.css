@@ -1,66 +1,44 @@
 .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #90abab;
-  position: fixed;
+  height: 70px;
+  background: #90abab;
   width: 100%;
-  z-index: 3;
-}
-
-.navLinks {
-  display: flex;
   justify-content: flex-end;
-  padding: 20px;
-  color: #ebe7e7;
-  width: 600px;
+  padding: 10px;
+  position: fixed;
+  z-index: 1;
 }
 
-a {
-  cursor: pointer;
-  background-color: gray;
-  width: 125px;
-  box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
-  transition: all 0.5s ease;
-  border: none;
-  border-radius: 5px;
-  font-size: 15px;
-  color: whitesmoke;
-  padding: 7px;
-  margin: 10px;
+.link {
+  color: #00ffea;
+  font-size: 23px;
+  text-shadow: #d445b3 1px 1px 2px;
+  margin: 5px;
+  padding: 5px;
+  height: 50px;
+}
+@media screen and (max-width: 580px) {
+  .link {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 470px) {
+  .link {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .link {
+    font-size: 13px;
+  }
 }
 
-a:hover {
-  background: #020c15;
-  box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
+@media screen and (max-width: 370px) {
+  .link {
+    font-size: 12px;
+  }
 }
 
-.btn {
-  cursor: pointer;
-  background-color: gray;
-  width: 125px;
-  box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
-  transition: all 0.5s ease;
-  border: none;
-  border-radius: 5px;
-  font-size: 15px;
-  color: whitesmoke;
-  padding: 7px;
-  margin: 10px;
-}
-
-.btn:hover {
-  background: #020c15;
-  box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
-}
-
-.name {
-  background-color: #495a52;
-  padding: 4px 20px;
-  margin-right: 30px;
-  text-align: center;
-  box-shadow: #3b83e0 2px 3px 5px;
-  color: white;
-  font-size: 20px;
-  text-shadow: white 1px 1px 1px;
+.link:hover {
+  color: #3b83e0;
 }

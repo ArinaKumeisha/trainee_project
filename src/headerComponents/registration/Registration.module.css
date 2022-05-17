@@ -25,7 +25,21 @@
 
 .register {
   display: flex;
-  justify-content: center;
-  height: 50px;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  height: 150px;
+}
+
+.link {
+  font-size: 20px;
+  margin-left: 70px;
+  background-color: #3b83e0;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: #dd0a65 2px 4px 3px;
+}
+
+.link:hover {
+  background-color: #092dab;
 }

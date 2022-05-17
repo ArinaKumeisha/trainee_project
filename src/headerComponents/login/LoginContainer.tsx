@@ -17,6 +17,8 @@ export const LoginContainer = () => {
       setError('User with this name does not exist!');
     } else if (!getValidStorageData(name, password)) {
       setError('Wrong password or name!');
+    } else if (name.length <= 0) {
+      setError('Enter data!');
     } else {
       const userData = JSON.parse(localStorage.getItem(name)!);
       dispatch(
