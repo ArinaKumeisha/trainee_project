@@ -9,6 +9,12 @@
   color: #092dab;
   margin-top: 120px;
 }
+@media (max-width: 440px) {
+  .input {
+    width: 85%;
+  }
+}
+
 .input:focus {
   outline: none;
   border-bottom: 2px solid black;
