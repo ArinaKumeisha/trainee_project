@@ -52,7 +52,7 @@ export const Login = ({
         </div>
       </form>
       <div className={style.register}>
-        <div className={s.error}>{error}</div>
+        <div className={error && s.error}>{error}</div>
         {error === 'User with this name does not exist!' && (
           <Link to={'/registration'} className={style.link}>
             Registration

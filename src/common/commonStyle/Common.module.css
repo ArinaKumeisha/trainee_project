@@ -75,7 +75,11 @@
 }
 
 .error {
-  margin-top: 40px;
+  width: 300px;
+  background: #010d0d;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 20px;
   color: red;
   text-shadow: whitesmoke 0.5px 0.5px;
   font-size: 30px;

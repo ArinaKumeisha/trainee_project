@@ -50,7 +50,9 @@ export const Registration = ({
           <input type="submit" className={s.btnSubmit} />
         </div>
       </form>
-      {<div className={s.error}>{error}</div>}
+      <div className={style.blockError}>
+        {<div className={error && s.error}>{error}</div>}
+      </div>
     </div>
   );
 };
