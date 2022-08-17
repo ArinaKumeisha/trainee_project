@@ -15,6 +15,7 @@ import { RiHeartAddLine } from 'react-icons/ri';
 type Props = {
   shortCart: ShortInfoForItem;
 };
+
 export const Ammo = ({ shortCart }: Props) => {
   const { id, name, image, description } = shortCart;
   const authorized = useAppMainSelector(state => state.userInfo.authorized);

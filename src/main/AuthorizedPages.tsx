@@ -1,10 +1,10 @@
 import React from 'react';
 import style from 'main/Header.module.css';
 import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAppMainSelector } from 'reduxEntities/index';
 import { logout } from 'reduxEntities/index';
 import { useAppDispatch } from 'reduxEntities/index';
-import { useNavigate } from 'react-router-dom';
 
 export const AuthorizedPages = () => {
   const user = useAppMainSelector(state => state.userInfo.user);

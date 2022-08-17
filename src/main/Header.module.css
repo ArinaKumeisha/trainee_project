@@ -18,23 +18,9 @@
   height: 50px;
 }
 
-.responsiveMenu {
-  position: fixed;
-  width: 36px;
-  height: 30px;
-  left: 36px;
-  top: 150px;
-  color: red;
-  background-color: white;
-}
 @media screen and (max-width: 480px) {
   .link {
     font-size: 19px;
-  }
-}
-@media screen and (max-width: 450px) {
-  .link {
-    font-size: 16px;
   }
 }
 

@@ -35,8 +35,6 @@ export const styles = {
     //элементы в раскрывающем окне
     color: '#b8b7ad',
     padding: '0.8em',
-    display: 'flex',
-    flexDirection: 'column',
   },
   bmItem: {
     display: 'inline-block',
