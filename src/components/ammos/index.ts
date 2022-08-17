@@ -1,3 +1,3 @@
-export { AmmoCart } from 'components/ammos/ammoCart/AmmoCart';
-export { Ammos } from './Ammos';
-export { Ammo } from './ammo/Ammo';
+export { AmmoCart } from 'components/ammos/AmmoCart';
+export { Ammos } from 'components/ammos/Ammos';
+export { Ammo } from 'components/ammos/Ammo';

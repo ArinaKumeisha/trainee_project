@@ -1,4 +1,8 @@
-export const options = [
+export type Options = {
+  value: string;
+  label: string;
+};
+export const options: Options[] = [
   {
     value: 'ammos',
     label: 'ammos',
@@ -12,7 +16,31 @@ export const options = [
     label: 'ashes',
   },
   {
+    value: 'bosses',
+    label: 'bosses',
+  },
+  {
+    value: 'classes',
+    label: 'classes',
+  },
+  {
+    value: 'creatures',
+    label: 'creatures',
+  },
+  {
+    value: 'incantations',
+    label: 'incantations',
+  },
+  {
     value: 'items',
     label: 'items',
+  },
+  {
+    value: 'talismans',
+    label: 'talismans',
+  },
+  {
+    value: 'weapons',
+    label: 'weapons',
   },
 ];

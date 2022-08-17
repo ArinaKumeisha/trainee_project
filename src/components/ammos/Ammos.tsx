@@ -12,7 +12,7 @@ export const Ammos = () => {
     page: +page,
     limit: 10,
   });
-  console.log(items?.data);
+
   const searchValues = items && enteredSearch(items.data, name);
   return (
     <div>

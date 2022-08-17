@@ -19,13 +19,13 @@
 
 .detailedItem {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
   flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
 }
 
 .imageItem {
-  margin-top: 150px;
   width: 350px;
   background-color: #11111d;
   border-radius: 15px;

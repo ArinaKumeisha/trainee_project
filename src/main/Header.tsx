@@ -1,45 +1,35 @@
 import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { logout, useAppDispatch, useAppMainSelector } from 'reduxEntities';
+import { NavLink } from 'react-router-dom';
+import { useAppMainSelector } from 'reduxEntities';
 import style from './Header.module.css';
+import useMatchMedia from 'use-match-media-hook';
+import { slide as Menu } from 'react-burger-menu';
+import { AuthorizedPages } from 'main/AuthorizedPages';
+import { UnAuthorizedPages } from 'main/UnAuthorizedPages';
+import { styles } from 'main/styles_burger_menu';
 
-export const Header = () => {
+export const Header = (props: any) => {
+  const queries = ['(max-width: 400px)', '(min-width: 800px)'];
+  const [mobile, desktop] = useMatchMedia(queries);
   const authorized = useAppMainSelector(state => state.userInfo.authorized);
-  const user = useAppMainSelector(state => state.userInfo.user);
-  const dispatch = useAppDispatch();
-  const navigate = useNavigate();
-  const logoutHandler = () => {
-    dispatch(logout());
-    navigate('/');
-  };
+
   return (
-    <div className={style.container}>
-      <NavLink to="/" className={style.link}>
-        Back
-      </NavLink>
-      {authorized ? (
-        <>
-          <div className={style.link}>{user.name}</div>
-          <NavLink to="/favorites" className={style.link}>
-            Favorites
+    <>
+      {mobile ? (
+        <Menu styles={styles} pageWrapId={'wrap'} {...props}>
+          <NavLink to="/" className={style.link}>
+            Back
           </NavLink>
-          <NavLink to="/history" className={style.link}>
-            History
-          </NavLink>
-          <div onClick={logoutHandler} className={style.link}>
-            Logout
-          </div>
-        </>
+          {authorized ? <AuthorizedPages /> : <UnAuthorizedPages />}
+        </Menu>
       ) : (
-        <>
-          <NavLink to="/registration" className={style.link}>
-            Registration
+        <div className={style.container}>
+          <NavLink to="/" className={style.link}>
+            Back
           </NavLink>
-          <NavLink to="/login" className={style.link}>
-            Login
-          </NavLink>
-        </>
+          {authorized ? <AuthorizedPages /> : <UnAuthorizedPages />}
+        </div>
       )}
-    </div>
+    </>
   );
 };

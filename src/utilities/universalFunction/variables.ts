@@ -1,2 +1,9 @@
+export const ARMORS_URL = 'armors?name=';
+export const ASHES_URL = 'ashes?name=';
 export const AMMOS_URL = 'ammos?name=';
 export const ITEMS_URL = 'items?name=';
+export const CLASSES_URL = 'classes?name=';
+export const CREATURES_URL = 'creatures?name=';
+export const INCANTATIONS_URL = 'incantations?name=';
+export const BOSSES_URL = 'bosses?name=';
+export const WEAPONS_URL = 'weapons?name=';

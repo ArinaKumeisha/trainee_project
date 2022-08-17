@@ -1,7 +1,7 @@
 import React from 'react';
-import { useCustomParams } from 'utilities';
-import { useGetOneAmmoQuery } from 'reduxEntities';
+import { useCustomParams } from 'utilities/index';
 import s from 'common/commonStyle/Common.module.css';
+import { useGetOneAmmoQuery } from 'reduxEntities/api/gamesAPI';
 
 export const AmmoCart = () => {
   const id = useCustomParams();
@@ -14,7 +14,6 @@ export const AmmoCart = () => {
         <div key={el.name + index}>
           <span>{el.name}</span>
           <span>{el.amount}</span>
-          <div>type:{data.data.type}</div>
         </div>
       );
     });
